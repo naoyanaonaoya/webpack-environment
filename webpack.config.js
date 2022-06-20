@@ -2,16 +2,27 @@ const path = require("path");
 
 module.exports = {
   // エントリーポイント
-  entry: "./src/app.js",
+  entry: { app: "./src/app.js" },
 
   output: {
     path: path.resolve(__dirname, "public"),
-    filename: "bundle.js",
+    filename: "[name].bundle.js",
   },
 
   mode: "development",
 
   module: {
-    rules: [],
+    rules: [
+      {
+        test: /\.scss$/,
+        // javascript内にバンドルされているcssをhtmlにバンドルする
+        // ↑
+        // cssをwebpackにバンドルする
+        // ↑
+        // sassからcssへの変換
+        // 下から実行されていく
+        use: ["style-loader", "css-loader", "sass-loader"],
+      },
+    ],
   },
 };
