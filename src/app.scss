@@ -1,6 +1,11 @@
 h1 {
   font-size: 2em;
+  // prefixがつくやつ
+  transition: all 0.3s;
+  color: blue;
   &:hover {
+    // prefixがつくやつ
+    transform: translateX(50px);
     color: red;
   }
 }

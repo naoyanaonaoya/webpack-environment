@@ -19,9 +19,11 @@ module.exports = {
         // ↑
         // cssをwebpackにバンドルする
         // ↑
+        // ....
+        // ↑
         // sassからcssへの変換
         // 下から実行されていく
-        use: ["style-loader", "css-loader", "sass-loader"],
+        use: ["style-loader", "css-loader", "postcss-loader", "sass-loader"],
       },
     ],
   },
